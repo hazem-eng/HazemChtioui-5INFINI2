@@ -28,7 +28,7 @@ pipeline {
         }
     }
 
-    stage('dockerhub') {
+    stage('DockerHub') {
         steps {
             script {
                 // Étape de connexion à Docker Hub
@@ -43,7 +43,6 @@ pipeline {
         }
     }
 }
-
 
 
 // pipeline {
