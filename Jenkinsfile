@@ -26,19 +26,19 @@ pipeline {
                 sh 'mvn -version'
             }
         }
-    }
 
-    stage('DockerHub') {
-        steps {
-            script {
-                // Étape de connexion à Docker Hub
-                sh "docker login -u hazemchtioui -p 191JMT5435"
+        stage('DockerHub') {
+            steps {
+                script {
+                    // Étape de connexion à Docker Hub
+                    sh "docker login -u hazemchtioui -p 191JMT5435"
 
-                // Étape de re-tagging de l'image
-                sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG chtiouihazem/alpine:1.0.0"
+                    // Étape de re-tagging de l'image
+                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG chtiouihazem/alpine:1.0.0"
 
-                // Étape de poussée de la nouvelle image vers Docker Hub
-                sh "docker push chtiouihazem/alpine:1.0.0"
+                    // Étape de poussée de la nouvelle image vers Docker Hub
+                    sh "docker push chtiouihazem/alpine:1.0.0"
+                }
             }
         }
     }
