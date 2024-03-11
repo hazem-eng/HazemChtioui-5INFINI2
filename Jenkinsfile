@@ -2,9 +2,9 @@ pipeline {
     agent any
 
     environment {
-            DOCKER_IMAGE_NAME = "chtiouihazem/alpine"
-            DOCKER_IMAGE_TAG = "1.0.0"
-        }
+        DOCKER_IMAGE_NAME = "chtiouihazem/alpine"
+        DOCKER_IMAGE_TAG = "1.0.0"
+    }
 
     stages {
         stage('Hello') {
@@ -12,6 +12,7 @@ pipeline {
                 echo 'Hello World'
             }
         }
+
         stage('GIT') {
             steps {
                 echo "Getting Project from Git"
@@ -25,25 +26,24 @@ pipeline {
                 sh 'mvn -version'
             }
         }
+    }
 
-       stage('dockerhub') {
-               stage('Build and Push Docker Image') {
-                   steps {
-                       script {
-                           // Étape de connexion à Docker Hub
-                           sh "docker login -u hazemchtioui -p 191JMT5435"
+    stage('dockerhub') {
+        steps {
+            script {
+                // Étape de connexion à Docker Hub
+                sh "docker login -u hazemchtioui -p 191JMT5435"
 
-                           // Étape de re-tagging de l'image
-                           sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG chtiouihazem/alpine:1.0.0"
+                // Étape de re-tagging de l'image
+                sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG chtiouihazem/alpine:1.0.0"
 
-                           // Étape de poussée de la nouvelle image vers Docker Hub
-                           sh "docker push chtiouihazem/alpine:1.0.0"
-                       }
-                   }
-               }
-       }
+                // Étape de poussée de la nouvelle image vers Docker Hub
+                sh "docker push chtiouihazem/alpine:1.0.0"
+            }
+        }
     }
 }
+
 
 
 // pipeline {
