@@ -11,7 +11,7 @@ pipeline {
             steps {
                 echo "Getting Project from Git"
                 git branch: 'hazemchtioui',
-                url: 'https://github.com/hazem-eng/Hazemchtioui-5INFINI2.git',
+                url: 'https://github.com/hazem-eng/Hazemchtioui-5INFINI2.git'
 
             }
         }
