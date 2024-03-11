@@ -31,7 +31,7 @@ pipeline {
             steps {
                 script {
                     // Étape de connexion à Docker Hub
-                    sh "docker login -u hazemchtioui -p 191JMT5435"
+                    sh "docker login -u hazemchtioui -p 191JMT5435docker"
 
                     // Étape de re-tagging de l'image
                     sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG hazemchtioui/alpine:1.0.0"
