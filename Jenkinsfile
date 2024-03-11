@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = "chtiouihazem/alpine"
+        DOCKER_IMAGE_NAME = "hazemchtioui/alpine"
         DOCKER_IMAGE_TAG = "1.0.0"
     }
 
@@ -34,10 +34,10 @@ pipeline {
                     sh "docker login -u hazemchtioui -p 191JMT5435"
 
                     // Étape de re-tagging de l'image
-                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG chtiouihazem/alpine:1.0.0"
+                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG hazemchtioui/alpine:1.0.0"
 
                     // Étape de poussée de la nouvelle image vers Docker Hub
-                    sh "docker push chtiouihazem/alpine:1.0.0"
+                    sh "docker push hazemchtioui/alpine:1.0.0"
                 }
             }
         }
