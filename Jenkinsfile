@@ -41,6 +41,14 @@ pipeline {
                 }
             }
         }
+
+
+        stage('sonarqube hazem'){
+           steps{
+           sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+           }
+
+        }
     }
 }
 
