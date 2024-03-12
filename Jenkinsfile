@@ -42,6 +42,13 @@ pipeline {
             }
         }
 
+         stage('Test Junit/Mockito') {
+                                        steps {
+                                                sh 'mvn test'
+                                               
+                                              }
+                                        }
+
 
 //         stage('sonarqube hazem'){
 //            steps{
@@ -49,13 +56,13 @@ pipeline {
 //            }
 //
 //         }
-         stage('Building Docker Image') {
-                     steps {
-                         script {
-                             sh 'docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG -f Dockerfile ./'
-                         }
-                     }
-                 }
+//          stage('Building Docker Image') {
+//                      steps {
+//                          script {
+//                              sh 'docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG -f Dockerfile ./'
+//                          }
+//                      }
+//                  }
     }
 }
 
