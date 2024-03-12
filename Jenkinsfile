@@ -43,12 +43,12 @@ pipeline {
         }
 
 
-        stage('sonarqube hazem'){
-           steps{
-           sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
-           }
-
-        }
+//         stage('sonarqube hazem'){
+//            steps{
+//            sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
+//            }
+//
+//         }
          stage('building docker image')
                  {
                       steps {
