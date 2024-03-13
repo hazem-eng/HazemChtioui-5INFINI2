@@ -37,21 +37,14 @@ pipeline {
                     sh "docker login -u hazemchtioui -p 191JMT5435docker"
 
                     // Étape de re-tagging de l'image
-                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG hazemchtioui/alpine:$DOCKER_IMAGE_TAG"
+                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG hazemchtioui/alpine:1.0.0"
 
                     // Étape de poussée de la nouvelle image vers Docker Hub
-                    sh "docker push hazemchtioui/alpine:$DOCKER_IMAGE_TAG"
+                    sh "docker push hazemchtioui/alpine:1.0.0"
                 }
             }
-//             stage('dockerhub') {
-//             //                                   steps {
-//             //
-//             //                              sh "docker login -u bensaadadhia -p 123456789"
-//             //                              sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
-//             //                              sh "docker push  bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
-//             //                                   }
-//             //             }
-//         }
+
+        }
 
 //          stage('Test Junit/Mockito') {
 //                                         steps {
@@ -61,12 +54,12 @@ pipeline {
 //                                         }
 
 
-      stage('sonarqube hazem'){
+         stage('sonarqube hazem'){
             steps{
             sh 'mvn sonar:sonar -Dsonar.login=admin -Dsonar.password=sonar'
             }
 
-         }
+        }
           stage('Building Docker Image') {
                       steps {
                           script {
