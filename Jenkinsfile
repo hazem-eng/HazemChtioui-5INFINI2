@@ -4,6 +4,8 @@ pipeline {
     environment {
         DOCKER_IMAGE_NAME = "hazemchtioui/alpine"
         DOCKER_IMAGE_TAG = "1.0.0"
+        $DOCKER_IMAGE_NAME1="x"
+        $DOCKER_IMAGE_TAG1="v1"
     }
 
     stages {
@@ -59,7 +61,7 @@ pipeline {
           stage('Building Docker Image') {
                       steps {
                           script {
-                              sh 'docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG -f Dockerfile ./'
+                              sh 'docker build -t $DOCKER_IMAGE_NAME1:$DOCKER_IMAGE_TAG1 -f Dockerfile ./'
                           }
                                   }
     }
