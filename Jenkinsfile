@@ -46,6 +46,12 @@ pipeline {
 
         }
 
+        stage('Deploy to Nexus') {
+                      steps {
+                             sh 'mvn deploy -DskipTests=true'
+                                  }
+                                  }
+
 //          stage('Test Junit/Mockito') {
 //                                         steps {
 //                                                 sh 'mvn test'
