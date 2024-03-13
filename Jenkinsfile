@@ -5,7 +5,7 @@ pipeline {
 
 
      DOCKER_IMAGE_NAME = "hazemchtioui/alpine"
-    DOCKER_IMAGE_TAG = "v${BUILD_NUMBER}"
+     DOCKER_IMAGE_TAG = "1.0.0"
 
     }
 
@@ -35,13 +35,20 @@ pipeline {
                 script {
                     sh "docker login -u hazemchtioui -p 191JMT5435docker"
 
-                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG hazemchtioui/alpine:$DOCKER_IMAGE_TAG"
+                    sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG hazemchtioui/alpine:1.0.0"
 
-                    sh "docker push hazemchtioui/alpine:$DOCKER_IMAGE_TAG"
+                    sh "docker push hazemchtioui/alpine:1.0.0"
                 }
             }
 
-
+             stage('dockerhub') {
+            //                                   steps {
+            //
+            //                              sh "docker login -u bensaadadhia -p 123456789"
+            //                              sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
+            //                              sh "docker push  bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
+            //                                   }
+            //             }
 
         }
 
@@ -55,7 +62,6 @@ pipeline {
                    steps {
                      sh 'mvn test'
            }
-           }
 
          stage('sonarqube hazem'){
             steps{
@@ -66,7 +72,7 @@ pipeline {
           stage('Building Docker Image') {
                       steps {
                           script {
-                              sh "'docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG -f Dockerfile ./"
+                              sh 'docker build -t $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG -f Dockerfile ./'
                           }
                                   }
     }
