@@ -43,15 +43,15 @@ pipeline {
                     sh "docker push hazemchtioui/alpine:$DOCKER_IMAGE_TAG"
                 }
             }
-            stage('dockerhub') {
-            //                                   steps {
-            //
-            //                              sh "docker login -u bensaadadhia -p 123456789"
-            //                              sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
-            //                              sh "docker push  bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
-            //                                   }
-            //             }
-        }
+//             stage('dockerhub') {
+//             //                                   steps {
+//             //
+//             //                              sh "docker login -u bensaadadhia -p 123456789"
+//             //                              sh "docker tag $DOCKER_IMAGE_NAME:$DOCKER_IMAGE_TAG bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
+//             //                              sh "docker push  bensaadadhia/dhiabensaada-5infini2-g3-stationski:$DOCKER_IMAGE_TAG"
+//             //                                   }
+//             //             }
+//         }
 
 //          stage('Test Junit/Mockito') {
 //                                         steps {
