@@ -69,6 +69,16 @@ pipeline {
                                   }
     }
 
+     stage('Run Spring && MySQL Containers') {
+                                      steps {
+
+                                        sh 'docker compose up -d'
+
+                                        echo 'Run Spring && MySQL Containers'
+                                            }
+                                         }
+                }
+
     }
 }
 
