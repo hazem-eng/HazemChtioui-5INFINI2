@@ -77,7 +77,7 @@ pipeline {
                                         echo 'Run Spring && MySQL Containers'
                                             }
                                          }
-                }
+
 
     }
 }
