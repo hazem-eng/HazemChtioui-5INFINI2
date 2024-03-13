@@ -41,7 +41,7 @@ pipeline {
                 }
             }
 
-           
+
 
         }
 
@@ -54,6 +54,7 @@ pipeline {
           stage('Test Junit/Mockito') {
                    steps {
                      sh 'mvn test'
+           }
            }
 
          stage('sonarqube hazem'){
