@@ -2,10 +2,12 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE_NAME = "hazemchtioui/alpine"
-        DOCKER_IMAGE_TAG = "1.0.0"
-        DOCKER_IMAGE_NAME1="x"
-        DOCKER_IMAGE_TAG1="v1"
+
+     DOCKER_IMAGE_NAME = 'hazemchtioui'
+      DOCKER_IMAGE_TAG = "v${BUILD_NUMBER}"
+//         DOCKER_IMAGE_NAME = "hazemchtioui/alpine"
+//         DOCKER_IMAGE_TAG = "1.0.0"
+
     }
 
     stages {
