@@ -62,6 +62,7 @@ pipeline {
                    steps {
                      sh 'mvn test'
            }
+           }
 
          stage('sonarqube hazem'){
             steps{
